@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>KVL Auto</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+
+
+
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="../database/js/jquery.js"></script>
+
+</head>
+<body>
+	
+	
+	<div class="container-login100" style="background-image: url('images/bg-01.png');">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
+			<form class="login100-form validate-form">
+				<span class="login100-form-title p-b-37">
+					KVL AUTO
+					 
+				</span>
+
+				<div class="wrap-input100  m-b-20" data-validate="Enter username or email">
+					<input id="item" class="input100" type="text" placeholder="username or email">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100  m-b-25" data-validate = "Enter password">
+					<input  id="quantity"  class="input100" type="password"  placeholder="password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button  id="list" class="login100-form-btn">
+						Sign In
+					</button>
+				</div>
+				<br>
+				<div class="text-center">
+					<a href="#" class="txt2 hov1">
+						Forgot Password ?
+					</a>
+				</div>
+
+				<div class="text-center p-t-57 p-b-20">
+					<span class="txt1">
+						Or login with
+					</span>
+				</div>
+
+				
+
+				<div class="text-center">
+					<a href="#" class="txt2 hov1">
+						Sign Up
+					</a>
+				</div>
+			</form>
+
+			
+		</div>
+	</div>
+	
+	
+
+	
+	
+
+
+
+
+	
+
+<script>
+
+var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
+
+
+$(function(){
+	
+// loadData();
+ //loading our records
+
+//CREATING TABLE STARTS HERE
+
+function Table_load(){
+db.transaction(function(transaction){
+	var sql="CREATE TABLE items "+
+	"(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"+
+	"item VARCHAR(100) NOT NULL,"+
+	"quantity INT(5) NOT NULL,"+"cname VARCHAR(100)  NULL," +"pnumb VARCHAR(100)  NULL,"+"deliadd VARCHAR(100)  NULL)";
+	transaction.executeSql(sql,undefined,function(){
+		alert("Table is created successfully");
+	},function(){
+		alert("Table is already being created");
+	})
+});
+}
+// CREATING TABLE ENDS HERE
+
+
+$("#list").click(function(){
+	
+	
+loadData();
+})
+
+
+
+//FUNCTION TO LOAD OUR RECORDS
+function loadData(){
+	
+	var user_name=document.getElementById("item").value;
+	var passwd=document.getElementById("quantity").value;
+	var l_stat=2;
+	
+		//$("#itemlist").children().remove();
+	db.transaction(function(transaction){
+		var sql="SELECT * FROM items ORDER BY id DESC";
+		transaction.executeSql(sql,undefined,function(transaction,result){
+if(result.rows.length>0){
+
+for(var i=0;i<result.rows.length;i++){
+	var row=result.rows.item(i);
+	var item=row.item;
+	var id=row.id;
+	var quantity=row.quantity;
+	if(item==user_name && quantity==passwd){
+		console.log(user_name);
+		
+	
+	     l_stat=1;
+	break;
+	}
+	else if(item==user_name && quantity!=passwd){
+		console.log(user_name);
+		
+	
+	     l_stat=3;
+		 console.log(user_name);
+	break;
+	}
+     
+
+    else{
+		l_stat=2;
+	
+	}
+	
+}
+switch(l_stat){
+	case 1:  location.href='../dashboard.html'; alert("loggin successfull!!"); break;
+	case 2 : alert("Create account!!"); location.href='../new-reg-form/new.html'; break;
+	case 3 : alert("check Your Password again!!"); break;
+	
+
+
+}
+}else{
+	$("#itemlist").append('<tr><td colspan="3" align="center">No Item Found</td></tr>');
+	alert('Account Does Not Exists!!');
+	location.href='';
+}
+		},function(transaction,err){
+			Table_load();
+			alert('No table found. Contact us!! ');
+		})
+	})
+
+
+
+
+//setTimeout was used to execute codes inside it to be loaded after records are loaded/fetched.
+
+
+
+}
+
+
+
+
+
+});
+
+
+
+	</script>
+
+</body>
+</html>

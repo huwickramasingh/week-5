@@ -1,0 +1,157 @@
+body{
+    background-color:#363636;}
+.welcome{
+   
+    width: 40%;
+    display: inline-block;
+    border-radius:25px;
+    padding: 10px;
+    margin-left: 5%;
+    margin-bottom:10px;
+    background-color:#363636;
+    color: white;
+
+   
+ 
+}
+.main{
+   
+  
+  
+}
+.name{
+
+}
+.quaries{
+    color: white;
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 5%;
+    float: right;
+    height: 80%;
+    border-radius:25px;
+    margin-left:2%;
+    vertical-align: left;
+    padding:17px;
+    background-color:#363636 ;
+    
+   
+
+}
+.wL{
+   
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+    border-radius:25px;
+    
+
+   
+    padding:10px;
+      margin-left: 10%;
+      color: white;
+      background-color:#363636 ;
+      
+  
+   
+  
+}
+.qube1{
+    border-radius:25px;
+   
+    width:80%;
+    /* border: solid; */
+    margin-right:3%;
+    padding: 2%;
+}
+.quaryEntry{
+ 
+  width: 40%;
+  
+   margin-left: 2%;
+   color: white;
+      text-indent: 7px;
+   display: inline-block;
+   border-radius: 25px;
+   padding :10px;
+      
+    
+      
+   
+
+
+}
+textarea {
+    width: 100%;
+    border-radius: 25px;
+    text-indent: 20px;
+    height: 300px;
+    margin-top: 60px;
+    background-color: #363636;
+    color: white;
+    outline: none;
+    
+    
+  }
+  .qube2{
+     
+      width: 75%;
+      margin:4%
+  }
+  .but {
+    background-color: black; 
+    border-radius: 15px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 10px;
+  }
+
+  
+@media only screen and (max-width: 675px) {
+
+    .welcome{
+       
+        display:block;
+        width: 100%;
+        margin-left: 0%;
+       
+       
+     
+    }
+    .wL{
+        
+        width: 100%;
+        margin-left: 0%;
+       
+      
+    }
+    .quaryEntry{
+      
+        width: 100%;
+        
+        
+         display: block;
+      
+      
+      
+      }
+      .quaries{
+        
+        width: 100%;
+        margin-left: 0%;
+   
+        
+        
+       
+    
+    }
+    
+
+}

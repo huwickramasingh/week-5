@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <!-- title in browser -->
+<title>Landing page </title>
+<!-- my style sheet -->
+<link href="styles.css" rel="stylesheet">
+<!-- responsive meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Vue link available in dashboard.html and sample.html(about us) pages -->
+</head>
+
+<body>
+  <!-- backround image -->
+  <div class="imgdiv " style="background-image: url('imgs/bac.png'); background-size: cover;  width: 100%;">
+<!-- navigation -->
+<div class="topnav" id="myTopnav">
+
+ <!-- company name -->
+ <a href="#home" class="active">
+  KVL Auto Service
+<!-- items in landing page menu navigation -->
+<a href="harith/sample.html">About</a>
+<a href="#contact">Services</a>
+<a href="#about">Employment</a>
+<a  class="" href="about.asp">Contact</a>
+<a  href="javascript:void(0);" onclick = "alert1()"> Sign up </a>
+<a onclick="pageLoading()">Loging</a>
+<a  href="javascript:void(0);" class="icon" onclick="myFunction()">
+<i class="fa fa-bars"></i>
+</a>
+
+
+</div>
+  <!-- search button -->
+    <div class="se-1">
+    <input class="in-1" type="text" placeholder="Search.."> 
+    <button style="padding:3px 7px;" class="btn-2 myButton" onclick="getLocation()"> <a   > </a>Search</a></button>
+    </div>
+
+      <!-- <img class="im" src="imgs/map.jpg" height="100px" width="100px" style="margin-top: 50px; ">  -->
+ <p id="p-2" class="p-2"></p>
+
+    <div class="discript" >
+
+ <!-- landing page Content -->
+ <p >
+  <h3>
+  Relationships, like Vehicles Should 
+  Undergo Regular Services to make sure 
+  They are still Roadworthy
+  </h3> 
+  <p  id="date"></p>
+</p>
+
+   
+</div>
+
+</div>
+<script >
+  //link rhe login page//
+function pageLoading(){
+    location.href='./loginpage/index.html';
+}
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className == "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+</script>
+</body>
+
+
+</html>

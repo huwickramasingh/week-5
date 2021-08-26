@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <!--title of the page-->
+<title>Landing page </title>
+<!-- my style sheet -->
+<link href="styles.css" rel="stylesheet">
+<!-- responsive meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Vue tag -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- font tag -->
+<script src="https://kit.fontawesome.com/5e785b2c48.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="dashbrd.css">
+
+
+
+</head>
+<body>
+  <!-- background image -->
+    <div class="imgdiv " style="background-image: url('imgs/bac.png'); background-size: cover;  width:fill;">
+
+
+
+      
+
+<div class="topnav" id="myTopnav">
+
+  <a href="#home" class="active">
+    KVL Auto Service
+
+  <a href="harith/sample.html">About</a>
+  <a href="#contact">Services</a>
+  <a href="#about">Employment</a>
+  <a  class="" href="about.asp">Contact</a>
+  <a  onclick="pageLoading()">Loggout</a>
+  <a  href="javascript:void(0);" class="icon" onclick="myFunction()">
+  <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+
+
+<!-- welcome qube  -->
+<div class="main" id="app">
+<div class="qube1">
+<div class="welcome">
+  <h1 class="name">Hello {{ Name }},</h1>
+  <h3> {{displayTime()}} <br> {{displayDate()}}</h3>
+
+</div>
+<!-- location Qube -->
+<div class="wL">
+  <h3> Vehicle No:
+    {{NoPlate}}</h3>
+  <h3>Your Location</h3>
+
+  <p id="result">Loading Location...{{showPosition()}}</p>
+ 
+</div>
+</div>
+
+
+<!-- quries Qube -->
+<div class="qube2">
+<div class="quaryEntry">
+  <!-- service issues entring box as atext input -->
+  <textarea v-model="message" class="diaryInput" placeholder="Any Quories?"
+      contenteditable="false" ></textarea>
+      <button class="but" v-on:click="submit">Submit</button>
+
+</div>
+<!-- previous Quaries -->
+<div class="quaries ">
+  <h3>Quaries</h3>
+  
+</div>
+<div class="slidecontainer">
+ 
+</div>
+</div>
+</div>
+
+
+<script src="comp.js"></script>
+</body>
+
+
+</html>

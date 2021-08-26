@@ -1,0 +1,86 @@
+<html>
+    <head>
+      <!--title of the page-->
+        <title>About us</title>
+        <!-- my style sheet -->
+        <link rel="stylesheet" href="styles.css">
+        <!-- Vue-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        </head>
+    <body>
+      <!-- responsive meta tag -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- font -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div class="imgdiv" style="background-image: url('../imgs/bac.png'); background-size: cover;  width: 100%;">
+        <div class="topnav" id="myTopnav">
+
+          <a href="../index.html" class="active">
+            KVL Auto Service
+        
+          <a href="./sample.html">About</a>
+          <a href="#contact">Services</a>
+          <a href="#about">Employment</a>
+          <a  class="" href="about.asp">Contact</a>
+          <a  href="javascript:void(0);" onclick = "alert1()"> Sign up </a>
+          <a onclick="pageLoading()">Loging</a>
+          <a  href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+          </a>
+        
+        
+        </div>
+        <!-- declarative rendering -->
+      <div class="app" id="app">
+        <h3>About Us</h3>
+        {{ message }} ,<br>
+      </div>
+      <script>
+        var app = new Vue({
+        el: '#app',
+        data: {
+        message: 'Excellent auto care provides excellent customer care.'
+        
+      }
+      })
+      </script>
+
+      <div class="row main">
+        <!--about us content -->
+        <div class="column left">
+        <div class="row heading">
+          <!--Image -->
+        <div class="img_ad">
+            <img  src ='wash.jpeg' width='250' height="300"/> 
+            <div id="app1">
+                {{ message }}
+          </div>
+          </div>
+          </div>  
+          <div class="row content">
+            <p><b>History</b></p>
+            <p>Our founding idea was to give the best overall auto maintenance solutions on the market to Sri Lankan car owners when we first opened our doors in 2008.This has remained our primary goal for more than two decades, and as a result, Auto Miraj has become the island's leading provider of car services.
+               A customer-centric approach dedicated to providing our clients with the greatest car maintenance solutions is at the heart of each and every one of our employees' work ethic.This dedication has aided our expansion, resulting in Auto Miraj being regarded as a leading provider of auto care solutions and car maintenance services with the largest customer base to date. </p>
+            <p><b>cutting-edge technology</b></p>
+            <p> Over the last two and a half decades, our pursuit of quality has led in the establishment of over 40 locations throughout the island, including professional vehicle workshops and body shops in Kaduwela and Ingiriya. We also have over 1000 personnel who are all trained and equipped with the most up-to-date trends and procedures in the auto maintenance industry.
+              Our professional people and constantly updated state-of-the-art equipment present at all of our locations have a proven track record of providing the best preventative maintenance and care to all of our clients, including proficiency in servicing the most recent vehicle kinds.</p>
+          </div>
+        </div>
+      </div>
+          
+        
+      </div>
+                <script>
+          var app = new Vue({
+          el: '#app1',
+          data: {
+          message: 'Your car deserves better'
+        }
+        })
+
+
+
+
+        </script>
+</body> 
+</html>
